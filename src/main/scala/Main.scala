@@ -74,7 +74,18 @@ def lengthCorrect(list: List[Int], res: Int): Int = list match {
   case Nil => res
   case h::t => lengthCorrect(t, res+1)
 }
-print(lengthCorrect(List(1, 1, 2, 3, 5, 8), 0))
+//print(lengthCorrect(List(1, 1, 2, 3, 5, 8), 0))
+
+
+// ------------ EX 2.3 -----------------
+// ??? to make ...
+
+
+// ------------ EX 2.4 -----------------
+def duplication(list: List[Int]): List[Int] = 
+{
+  list.flatMap(x => List(x,x)) // this is the returned list
+}
 
 
 }
