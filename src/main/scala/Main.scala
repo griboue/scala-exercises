@@ -58,6 +58,23 @@ def penultimate(list: List[Int]): Option[Int] = list match {
   case h::Nil => None
   case h::t => penultimate(t)
 }
-print(penultimate(List(1, 1, 2, 3, 5, 8)))
+//print(penultimate(List(1, 1, 2, 3, 5, 8)))
+
+
+
+// ------------ EX 2.2 -----------------
+def lengthIncorrect(list: List[Int]): Int = list match {
+  case Nil => 0
+  case h::t => 1 + lengthIncorrect(t)
+  // this function is dangerous (risk of stack overflow)
+}
+
+
+def lengthCorrect(list: List[Int], res: Int): Int = list match {
+  case Nil => res
+  case h::t => lengthCorrect(t, res+1)
+}
+print(lengthCorrect(List(1, 1, 2, 3, 5, 8), 0))
+
 
 }
